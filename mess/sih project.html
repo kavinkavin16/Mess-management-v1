@@ -1,0 +1,164 @@
+<html>
+<style>
+<!--input[type=text], select {
+  width: 100%;
+   padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+ background-color: #FFF5EE;
+    color: black;
+	border: none;
+    border-bottom: 2px solid blue;
+	width: 200%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+
+}-->
+input[type=text] {
+   width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid white;
+	background-color:white;
+	<!--width:50%;
+	    padding: 12px 20px;
+		margin:8px 0;
+background:transparent;
+border:none;
+outline:none;
+border-bottom:2px solid blue;
+color:black;
+margin-bottom:16px;
+font-size:18;-->
+}
+
+input[type=Add] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+input[type=Add]:hover {
+    background-color: #45a049;
+}
+
+
+input[type=Submit] {
+    width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=Submit]:hover {
+    background-color: #45a049;
+}
+.container {
+    border-radius: 2px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+div {
+    border-radius: 0px;
+    background-color: white;
+    padding: 0px;
+	background position:center;
+	width:80%;
+	background-size:cover;
+}
+</style>
+<script type="text/javascript">
+var count=0;
+function Addtext()
+{
+	count++;
+	var element=document.createElement("input");
+	var br=document.createElement("BR");
+	var br4=document.createElement("BR");
+	var br3=document.createElement("BR");
+	var label=document.createTextNode("Question"+count+":");
+	element.setAttribute("type","text");
+	element.setAttribute("value","");
+	element.setAttribute("name","qs"+count);
+	var div=document.getElementById("questions");
+	div.appendChild(br4);
+	div.appendChild(label);
+	div.appendChild(element);
+	div.appendChild(br);
+	div.appendChild(br3);
+	for(var i=0;i<4;i++)
+	{
+		var br1=document.createElement("BR");
+		var br2=document.createElement("BR");
+		var ele1=document.createElement("input");
+		var lab1=document.createTextNode("Option"+(i+1)+":");
+		ele1.setAttribute("type","text");
+		ele1.setAttribute("value","");
+		ele1.setAttribute("name","qs"+count+"_op"+(i+1));
+		var space=document.createTextNode("");
+		div.innerHTML+="&nbsp;&nbsp;&nbsp;&nbsp;";
+		div.appendChild(lab1);
+		div.appendChild(ele1);
+		div.appendChild(br1);
+		div.appendChild(br2);
+	}
+	var ele=document.createElement("input");
+	var lab=document.createTextNode("Answer for qs"+count);
+	var brx=document.createElement("BR");
+	ele.setAttribute("type","text");
+	ele.setAttribute("value","");
+	ele.setAttribute("name","ans"+count);	
+	div.appendChild(lab);
+	div.appendChild(ele);
+	div.appendChild(brx);
+	document.getElementById("count").value=count;
+}
+
+
+</script>
+<body bgcolor ="#f2f2f2">
+
+<center>
+ <div>
+<form action="/action_page.php">
+<br><br><br><br><br>
+    <!--<label for="fname" >Testname</font></label>-->
+	<p><font color="black"><font size="5px">DAY</font></font>
+    <input type="text" id="day" name="day" placeholder="day pls..">
+	
+	
+	<!--<p><font color="black"><font size="5px"></font></font>
+    <input type="text" id="fname" name="Testname" placeholder="Your Testname..">-->
+	
+	<p><font color="black"><font size="5px">Food</font></font>
+    <input type="text" id="fname" name="Testname" placeholder="type food..">
+	
+<div name="questions" id="questions">
+
+<span ><font color="black"><font size="8px">click to add dish</span><br></div></font>
+<input type="Add" onclick="Addtext()" name="add" value="Add"  /><br><br></font>
+<input type="Submit" name="Submit" />
+</div></center>
+</body>
+</html>
